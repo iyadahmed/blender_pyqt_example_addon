@@ -2,7 +2,7 @@ bl_info = {
     "name": "Cross Platform PyQt6 Addon Example",
     "description": "",
     "author": "Iyad Ahmed (iyadahmed430@gmail.com)",
-    "version": (0, 0, 1),
+    "version": (0, 0, 3),
     "blender": (3, 4, 1),
     "location": "",
     "warning": "",
