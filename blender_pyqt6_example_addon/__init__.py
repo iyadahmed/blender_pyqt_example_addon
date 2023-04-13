@@ -12,7 +12,6 @@ bl_info = {
     "category": "Scripting",
 }
 
-import os
 import site
 from pathlib import Path
 
@@ -23,7 +22,9 @@ site.addsitedir((Path(__file__).parent / "extern").as_posix())
 
 # Set plugin path to ensure we are using bundled plugins
 # (see https://github.com/iyadahmed/blender_pyqt_example_addon/issues/1#issue-1663320484)
-os.environ["QT_QPA_PLATFORM_PLUGIN_PATH"] = (Path(__file__).parent / "extern/PyQt6/Qt6/plugins/platforms").as_posix()
+from PyQt6.QtCore import QCoreApplication
+
+QCoreApplication.setLibraryPaths([(Path(__file__).parent / "extern/PyQt6/Qt6/plugins").as_posix()])
 
 from PyQt6.QtWidgets import QApplication, QLabel
 import bpy
